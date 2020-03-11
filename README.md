@@ -10,7 +10,7 @@ After the memory card with Raspbian was flashed, put two files in the root folde
 sudo apt-get update
 sudo apt-get -y install npm
 sudo npm install -g npm@2.x
-sudo apt-get install git
+sudo apt-get -y install git
 ```
 
 ## Download the code:
