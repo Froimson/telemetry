@@ -17,4 +17,3 @@ cd telemetry
 npm install
 
 sudo node telemetry.js
-
