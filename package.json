@@ -1,0 +1,12 @@
+{
+  "name": "iothub",
+  "version": "1.0.0",
+  "description": "Client application for Raspberry Pi collect temperature and humidity data from DHT11, then interact with Azure IoT Hub",
+  "main": "hubmessage.js",
+  "dependencies": {
+    "azure-iot-device": "^1.9.3",
+    "azure-iot-device-mqtt": "^1.9.3",
+    "rpi-dht-sensor": "*"
+  },
+  "license": "MIT"
+}
