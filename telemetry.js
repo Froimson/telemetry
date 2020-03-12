@@ -12,11 +12,11 @@ var isMessageSendOn = true;
 var messageId = 0;
 var client, config, messageProcessor;
 
-var connectionString = 'HostName=Eugenius.azure-devices.net;DeviceId=fakeSensor;SharedAccessKey=NL0y9wxXoH0OYYhpc02eOc3UU/ObqC/RzJvPPWFpJrQ=';
+var connectionString = 'HostName=piday2020.azure-devices.net;DeviceId=myDeviceId;SharedAccessKey=ukUr+oG5C91B5e4ootBz9rI6MnaW+LVy+BoIgXZY9tk=';
 
 var rpiDhtSensor = require('rpi-dht-sensor');
 
-var dht = new rpiDhtSensor.DHT11(4);
+var dht = new rpiDhtSensor.DHT11(2);
 
 function onStart(request, response) {
   console.log('[Device] Trying to invoke method start(' + request.payload || '' + ')');
@@ -58,7 +58,8 @@ function sendHubMessage() {
         nameId: "Device",
         messageType: "Telemetry", 
         messageId: messageId,
-        valueStr: "10" }));
+        temperature: readout.temperature,
+        humidity: readout.humidity }));
         
     message.contentEncoding = 'utf-8';
     message.contentType = 'application/json';
